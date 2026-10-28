@@ -1,0 +1,9 @@
+<resources>
+    <color name="background">#0D1115</color>
+    <color name="surface">#171E24</color>
+    <color name="surface_raised">#202930</color>
+    <color name="accent">#C9F36A</color>
+    <color name="text_primary">#F1F5ED</color>
+    <color name="text_secondary">#9AA69D</color>
+    <color name="danger">#FF8F7A</color>
+</resources>
