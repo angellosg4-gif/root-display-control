@@ -22,15 +22,14 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew || find . -name "gradlew" -exec chmod +x {} \;
-
     - name: Build with Gradle
       run: |
+        # Si existe gradlew lo usa, si no usa gradle global
         if [ -f "./gradlew" ]; then
-          ./gradlew assembleDebug
+          chmod +x gradlew
+          ./gradlew assembleDebug --stacktrace
         else
-          gradle assembleDebug
+          gradle assembleDebug --stacktrace
         fi
 
     - name: Upload APK Artifact
